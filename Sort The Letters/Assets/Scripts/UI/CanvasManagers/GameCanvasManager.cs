@@ -9,26 +9,25 @@ namespace UI.CanvasManagers
 {
     public class GameCanvasManager : MonoBehaviour
     {
-        // Animasyon
-        //Ease easeType = Ease.OutBack;
+        
         [Header("Level")]
         [SerializeField] private TextMeshProUGUI level;
-        [SerializeField] private RectTransform levelRec;
 
         private void Start()
         {
             
         }
-        private void ShowLevel()
+        private void StartLevel()
         {
             var level = GameManager.Instance.LevelManager.GetGameLevel();
             this.level.text = "LEVEL " + level;
         }
 
+        
         private void OnGameStateChange(GameStates state)
         {
             if (state == GameStates.GAME)
-                ShowLevel();
+                StartLevel();
         }
 
         private void OnEnable()

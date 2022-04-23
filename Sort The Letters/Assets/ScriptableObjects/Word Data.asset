@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20837e5ecd714515802b3c4d7db9e35, type: 3}
-  m_Name: ElephantSettings
+  m_Script: {fileID: 11500000, guid: 322e2939471990b4bb1a019d667e977a, type: 3}
+  m_Name: Word Data
   m_EditorClassIdentifier: 
-  GameID: cc50369c53ddfda38e075f39c9da0364441fa87d262945e9c53e251d13f13b1b
-  GameSecret: b352136a0f7f794193d0c2754948afdf5b391ba1aa75e874c27c0c0c765a65e9
+  WordList: []

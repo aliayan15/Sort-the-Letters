@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TemplateScene.unity
     guid: 19e91d75b7580a549b41a4c27eb1be9c
+  - enabled: 1
+    path: Assets/Scenes/AliTest.unity
+    guid: 0d13439365656d24aae3a080ded4ec2e
   m_configObjects: {}
