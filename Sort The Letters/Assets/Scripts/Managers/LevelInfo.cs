@@ -7,7 +7,7 @@ namespace Managers
     {
         private void Start()
         {
-            GameManager.Instance.SetMenu();
+            GameManager.Instance.SetGame();
         }
     }
 }
