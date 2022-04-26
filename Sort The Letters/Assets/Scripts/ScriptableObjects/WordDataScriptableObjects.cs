@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/WordData")]
 public class WordDataScriptableObjects : ScriptableObject
 {
-    public List<string> WordList = new List<string>();
+    public List<string> WordList;
 }

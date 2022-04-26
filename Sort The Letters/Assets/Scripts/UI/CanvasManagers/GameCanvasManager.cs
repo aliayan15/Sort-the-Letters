@@ -25,6 +25,14 @@ namespace UI.CanvasManagers
 
         }
 
+        public void MouseDown()
+        {
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i].CheckMouseDown();
+            }
+        }
+
         private void SetWords()
         {
             _randomCurrectWords = wordSelected.GetRandomWords();
@@ -34,7 +42,7 @@ namespace UI.CanvasManagers
         {
             for (int i = 0; i < words.Length; i++)
             {
-                words[i].SetLetters(_wrongWords[i]);
+                words[i].SetLetters(_wrongWords[i],_randomCurrectWords[i]);
             }
         }
 

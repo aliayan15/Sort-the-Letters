@@ -9034,21 +9034,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grid
       objectReference: {fileID: 0}
-    - target: {fileID: 5448720575615171147, guid: adacab2be5292e84b9b587580edce9bd,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.20465466
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448720575615171147, guid: adacab2be5292e84b9b587580edce9bd,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.34007913
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448720575615171147, guid: adacab2be5292e84b9b587580edce9bd,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.6886792
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adacab2be5292e84b9b587580edce9bd, type: 3}
 --- !u!224 &6788084703157871053 stripped
