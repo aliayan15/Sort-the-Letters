@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17f46fffc720f04eaa1fbbf825bdd02, type: 3}
   m_Name: Letter Data Store
   m_EditorClassIdentifier: 
-  SelecteColor: {r: 1, g: 0.8659609, b: 0.25943398, a: 1}
-  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  SelecteColor: {r: 0.78823537, g: 0.7058824, b: 0.34509805, a: 1}
+  NormalColor: {r: 0.47058827, g: 0.48627454, b: 0.49411768, a: 1}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WordSelected : MonoBehaviour
@@ -41,11 +42,8 @@ public class WordSelected : MonoBehaviour
             var randomLetter = letters[randomIndex];
             letters[randomIndex] = letters[secontIndex];
             letters[secontIndex] = randomLetter;
-            var wrongWord = "";
-            for (int v = 0; v < letters.Length; v++)
-            {
-                wrongWord += letters[v].ToString();
-            }
+            var wrongWord = letters.ArrayToString();
+
             wrongwords.Add(wrongWord);
         }
 

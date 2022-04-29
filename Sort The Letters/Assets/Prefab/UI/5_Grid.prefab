@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6886792, g: 0.34007913, b: 0.20465466, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.47058827, g: 0.48627454, b: 0.49411768, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -188,6 +188,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8677403660678997527}
     m_Modifications:
+    - target: {fileID: 1391253965560179385, guid: abb86ce8e1400b8469f32f930dd4a88d,
+        type: 3}
+      propertyPath: index
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1391253965560179385, guid: abb86ce8e1400b8469f32f930dd4a88d,
         type: 3}
       propertyPath: wordLetter
@@ -342,6 +347,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8677403660678997527}
     m_Modifications:
+    - target: {fileID: 1391253965560179385, guid: abb86ce8e1400b8469f32f930dd4a88d,
+        type: 3}
+      propertyPath: index
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1391253965560179385, guid: abb86ce8e1400b8469f32f930dd4a88d,
         type: 3}
       propertyPath: wordLetter
@@ -652,6 +662,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1391253965560179385, guid: abb86ce8e1400b8469f32f930dd4a88d,
         type: 3}
+      propertyPath: index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391253965560179385, guid: abb86ce8e1400b8469f32f930dd4a88d,
+        type: 3}
       propertyPath: wordLetter
       value: 
       objectReference: {fileID: 8972112731250184730}
@@ -804,6 +819,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8677403660678997527}
     m_Modifications:
+    - target: {fileID: 1391253965560179385, guid: abb86ce8e1400b8469f32f930dd4a88d,
+        type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1391253965560179385, guid: abb86ce8e1400b8469f32f930dd4a88d,
         type: 3}
       propertyPath: wordLetter
