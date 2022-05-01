@@ -26,6 +26,7 @@ public class LetterListener : MonoBehaviour
 
     public void Pressed()
     {
+        if (image.color == dataStore.SelecteColor) return;
         image.color = dataStore.SelecteColor;
         wordLetter.Pressed(index);
         GameManager.Instance.uiManager.gameCanvasManager.MouseDown();

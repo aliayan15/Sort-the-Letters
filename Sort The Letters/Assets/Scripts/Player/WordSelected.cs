@@ -27,10 +27,11 @@ public class WordSelected : MonoBehaviour
         return words;
     }
 
+    // secilen kelimelerin 2 harfini yer degistir
     public List<string> GetWrongWords(List<string> words)
     {
         List<string> wrongwords = new List<string>();
-        // secilen kelimelerin 2 harfini yer degistir
+        // Yer Degistir
         for (int i = 0; i < words.Count; i++)
         {
             var letters = words[i].ToCharArray();
@@ -38,6 +39,13 @@ public class WordSelected : MonoBehaviour
             var secontIndex = randomIndex + Random.Range(1, 5);
             if (secontIndex > letters.Length - 1)
                 secontIndex -= letters.Length;
+            // Ayni harf olmadigini kontrol et
+            if (letters[randomIndex] == letters[secontIndex])
+            {
+                secontIndex++;
+                if (secontIndex > letters.Length - 1)
+                    secontIndex -= letters.Length;
+            }
 
             var randomLetter = letters[randomIndex];
             letters[randomIndex] = letters[secontIndex];

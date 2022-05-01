@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using DG.Tweening;
+using Managers;
 
 public class WordLetters : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class WordLetters : MonoBehaviour
         StartCoroutine(PlayLetterChangeSesion(newWord, 0.2f));
     }
 
+    // Harflerin yerlerinin degismesi ve dogruluk kontrolu
     private IEnumerator PlayLetterChangeSesion(string newWord, float time)
     {
         letterListeners[_firstIndex].transform.DOScale(0, time);
@@ -68,22 +70,25 @@ public class WordLetters : MonoBehaviour
         WhriteText(newWord);
         letterListeners[_firstIndex].transform.DOScale(1, time);
         letterListeners[_secondIndex].transform.DOScale(1, time);
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(time + 0.2f);
         if (newWord == _correctWord)
             PlayCorrectChoseSesion();
         else
             PlayWrongChoseSesion();
+        GameManager.Instance.player.TotalChoceCount++;
     }
 
     private void PlayCorrectChoseSesion()
     {
         StartCoroutine(PlayOpenningAnimation(true, 0.1f));
+        GameManager.Instance.player.Skore++;
     }
     private void PlayWrongChoseSesion()
     {
         StartCoroutine(PlayOpenningAnimation(false, 0.1f));
     }
 
+    // Harflerin acilmasi
     private IEnumerator PlayOpenningAnimation(bool correct, float time)
     {
         for (int i = 0; i < letterListeners.Length; i++)
@@ -101,7 +106,11 @@ public class WordLetters : MonoBehaviour
         var letters = text.ToCharArray();
         for (int i = 0; i < letters.Length; i++)
         {
-            letterTests[i].text = letters[i].ToString();
+            var letter = letters[i].ToString();
+            if (letter == "i")
+                letter = "ı";
+
+            letterTests[i].text = letter;
         }
     }
 

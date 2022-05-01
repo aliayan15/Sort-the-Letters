@@ -10,6 +10,7 @@ namespace UI.CanvasManagers
     public class GameCanvasManager : MonoBehaviour
     {
         [SerializeField] private WordSelected wordSelected;
+        [SerializeField] private Image levelProgress;
         [Header("Level")]
         [SerializeField] private TextMeshProUGUI level;
         [Space(5)]
@@ -20,10 +21,7 @@ namespace UI.CanvasManagers
         private List<string> _randomCurrectWords = new List<string>();
         private List<string> _wrongWords = new List<string>();
 
-        private void Start()
-        {
 
-        }
 
         public void MouseDown()
         {
@@ -33,6 +31,14 @@ namespace UI.CanvasManagers
             }
         }
 
+        public void SetLevelProgress(int skore)
+        {
+            var ratio = (float)skore / 7f;
+            levelProgress.DOKill();
+            levelProgress.DOFillAmount(ratio, 0.3f);
+        }
+
+        #region SetWords
         private void SetWords()
         {
             _randomCurrectWords = wordSelected.GetRandomWords();
@@ -45,6 +51,7 @@ namespace UI.CanvasManagers
                 words[i].SetLetters(_wrongWords[i],_randomCurrectWords[i]);
             }
         }
+        #endregion
 
         private void StartLevel()
         {
@@ -53,6 +60,7 @@ namespace UI.CanvasManagers
             // Set Words
             SetWords();
             SetLetters();
+            levelProgress.fillAmount = 0;
         }
 
 

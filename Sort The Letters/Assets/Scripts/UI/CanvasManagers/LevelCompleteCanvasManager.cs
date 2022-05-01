@@ -16,20 +16,10 @@ namespace UI.CanvasManagers
 
         Sequence levelComplete;
 
-        private void Start()
-        {
-            StartUI();
-        }
-
-        private void StartUI()
-        {
-            nextLevel.DOScale(0, 0);
-            levelCompleteText.DOScale(0, 0);
-        }
-
+        
         private void FadeOut()
         {
-            //conffety.Play();
+            conffety.Play();
             //levelComplete = DOTween.Sequence();
 
             //levelComplete.Append(levelCompleteText.DOScale(1, 0.5f).SetEase(easeType))
@@ -40,8 +30,7 @@ namespace UI.CanvasManagers
         {
             if (state == GameStates.LEVELCOMPLETE)
                 FadeOut();
-            if (state == GameStates.MENU)
-                StartUI();
+            
         }
 
         private void OnEnable()
