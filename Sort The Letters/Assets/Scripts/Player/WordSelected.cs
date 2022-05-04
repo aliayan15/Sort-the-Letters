@@ -16,14 +16,20 @@ public class WordSelected : MonoBehaviour
         int lastIndex = 0;
         if (PlayerPrefs.HasKey(_lastIndex))
             lastIndex = PlayerPrefs.GetInt(_lastIndex);
-
+        
         var count = lastIndex + 7;
+
+        if (count >= wordData.WordList.Count - 1)
+        {
+            lastIndex = 0;
+            count = lastIndex + 7;
+        } 
         for (int i = lastIndex; i < count; i++)
         {
             words.Add(wordData.WordList[i]);
         }
         PlayerPrefs.SetInt(_lastIndex, count);
-        
+
         return words;
     }
 

@@ -50,4 +50,16 @@ public class LetterListener : MonoBehaviour
     {
         image.color = dataStore.NormalColor;
     }
+
+    public void DisableAnimator()
+    {
+        if (_anim)
+        {
+            _anim.enabled = true;
+            _anim.Rebind();
+            _anim.Update(0f);
+            _anim.enabled = false;
+        }
+
+    }
 }

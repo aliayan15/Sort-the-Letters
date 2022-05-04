@@ -4,6 +4,7 @@ using UnityEngine;
 using Managers;
 using DG.Tweening;
 using TMPro;
+using Players.Stores;
 
 namespace UI.CanvasManagers
 {
@@ -16,6 +17,12 @@ namespace UI.CanvasManagers
         [Space(5)]
         [Header("Words")]
         [SerializeField] private WordLetters[] words;
+        [Header("Totarial")]
+        [SerializeField] private WordLetters totarialWord;
+        [SerializeField] private GameObject totarial;
+        [SerializeField] private string totarialCorrectWord;
+        [SerializeField] private string totarialWrongWord;
+        [SerializeField] private GameObject[] hands;
 
 
         private List<string> _randomCurrectWords = new List<string>();
@@ -29,6 +36,8 @@ namespace UI.CanvasManagers
             {
                 words[i].CheckMouseDown();
             }
+            if (totarial.activeInHierarchy)
+                totarialWord.CheckMouseDown();
         }
 
         public void SetLevelProgress(int skore)
@@ -48,16 +57,51 @@ namespace UI.CanvasManagers
         {
             for (int i = 0; i < words.Length; i++)
             {
-                words[i].SetLetters(_wrongWords[i],_randomCurrectWords[i]);
+                words[i].SetLetters(_wrongWords[i], _randomCurrectWords[i]);
+            }
+            // totarial yapildi
+            if (!PlayerLevelStore.IsTotarialDone())
+            {
+                SetTotarial();
+            }
+            else
+            {
+                totarial.SetActive(false);
+                words[0].gameObject.SetActive(true);
             }
         }
+
+        private void SetTotarial()
+        {
+            totarialWord.SetLetters(totarialWrongWord, totarialCorrectWord);
+            totarial.SetActive(true);
+            words[0].gameObject.SetActive(false);
+        }
         #endregion
+
+        public void SetTotarialEnd()
+        {
+            totarial.GetComponent<Image>().enabled = false;
+            for (int i = 0; i < hands.Length; i++)
+            {
+                hands[i].SetActive(false);
+            }
+        }
+
+        private void DisableWordAnimators()
+        {
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i].DisableAllAnimators();
+            }
+        }
 
         private void StartLevel()
         {
             var level = GameManager.Instance.LevelManager.GetGameLevel();
             this.level.text = "LEVEL " + level;
             // Set Words
+            DisableWordAnimators();
             SetWords();
             SetLetters();
             levelProgress.fillAmount = 0;

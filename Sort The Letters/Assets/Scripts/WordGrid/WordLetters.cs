@@ -9,6 +9,8 @@ public class WordLetters : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI[] letterTests;
     [SerializeField] private LetterListener[] letterListeners;
+    [Space(10)]
+    [SerializeField] private bool isTotarial = false;
 
     private bool _isPressed;
     private bool _canPress = true;
@@ -22,9 +24,11 @@ public class WordLetters : MonoBehaviour
 
     public void SetLetters(string wrongWord, string correctWord)
     {
+        Debug.Log("Correct word: " + correctWord);
         _correctWord = correctWord;
         _wrongWord = wrongWord;
         WhriteText(wrongWord);
+        _canPress = true;
     }
 
     public void CheckMouseDown()
@@ -45,6 +49,15 @@ public class WordLetters : MonoBehaviour
         {
             letterListeners[i].Clear();
         }
+        _selectCount = 0;
+    }
+
+    public void DisableAllAnimators()
+    {
+        for (int i = 0; i < letterListeners.Length; i++)
+        {
+            letterListeners[i].DisableAnimator();
+        }
     }
 
     private void LettersSelected()
@@ -61,6 +74,7 @@ public class WordLetters : MonoBehaviour
         StartCoroutine(PlayLetterChangeSesion(newWord, 0.2f));
     }
 
+    #region Animation Part
     // Harflerin yerlerinin degismesi ve dogruluk kontrolu
     private IEnumerator PlayLetterChangeSesion(string newWord, float time)
     {
@@ -99,6 +113,15 @@ public class WordLetters : MonoBehaviour
                 letterListeners[i].WrongChose();
             yield return new WaitForSeconds(time);
         }
+        yield return new WaitForSeconds(0.7f);
+        if (isTotarial)
+            SetTotarialEnd();
+    }
+    #endregion
+
+    private void SetTotarialEnd()
+    {
+        GameManager.Instance.uiManager.gameCanvasManager.SetTotarialEnd();
     }
 
     private void WhriteText(string text)
