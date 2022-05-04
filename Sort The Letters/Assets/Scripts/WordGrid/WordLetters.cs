@@ -24,7 +24,7 @@ public class WordLetters : MonoBehaviour
 
     public void SetLetters(string wrongWord, string correctWord)
     {
-        Debug.Log("Correct word: " + correctWord);
+        //Debug.Log("Correct word: " + correctWord);
         _correctWord = correctWord;
         _wrongWord = wrongWord;
         WhriteText(wrongWord);
