@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
-using System;
 using Managers;
 
 public class LetterListener : MonoBehaviour
@@ -30,6 +28,7 @@ public class LetterListener : MonoBehaviour
         image.color = dataStore.SelecteColor;
         wordLetter.Pressed(index);
         GameManager.Instance.uiManager.gameCanvasManager.MouseDown();
+        GameManager.Instance.settingManager.VibrateLight();
     }
 
     public void CorrectChose()

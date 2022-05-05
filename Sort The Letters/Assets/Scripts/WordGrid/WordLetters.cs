@@ -96,6 +96,7 @@ public class WordLetters : MonoBehaviour
     {
         StartCoroutine(PlayOpenningAnimation(true, 0.1f));
         GameManager.Instance.player.Skore++;
+        GameManager.Instance.settingManager.VibrateTransient();
     }
     private void PlayWrongChoseSesion()
     {
