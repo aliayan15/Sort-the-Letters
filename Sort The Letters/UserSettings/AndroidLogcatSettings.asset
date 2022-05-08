@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "52031b085f2814f5",
         "name": "com.DefaultCompany.ChangetheLetters",
-        "processId": 24891,
+        "processId": 1495,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -18,6 +18,18 @@
             "deviceId": "52031b085f2814f5",
             "name": "com.DefaultCompany.ChangetheLetters",
             "processId": 24891,
+            "exited": false
+        },
+        {
+            "deviceId": "52031b085f2814f5",
+            "name": "com.DefaultCompany.ChangetheLetters",
+            "processId": 29844,
+            "exited": false
+        },
+        {
+            "deviceId": "52031b085f2814f5",
+            "name": "com.DefaultCompany.ChangetheLetters",
+            "processId": 1495,
             "exited": false
         }
     ],
